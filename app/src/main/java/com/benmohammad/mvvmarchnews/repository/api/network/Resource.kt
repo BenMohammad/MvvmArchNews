@@ -1,6 +1,5 @@
 package com.benmohammad.mvvmarchnews.repository.api.network
 
-import android.content.res.Resources
 
 data class Resource<ResultType>(
     var status: Status,
@@ -10,9 +9,10 @@ data class Resource<ResultType>(
     companion object{
         fun<ResultType> success(data: ResultType): Resource<ResultType> =
             Resource(Status.SUCCESS, data)
-    }
+
 
     fun <ResultType> loading(): Resource<ResultType> = Resource(Status.LOADING)
 
-    fun<ResultType> error(message: String?): Resource<ResultType> = Resource(Status.ERROR, errorMessage = message)
+    fun <ResultType> error(message: String?): Resource<ResultType> = Resource(Status.ERROR, errorMessage = message)
+}
 }
