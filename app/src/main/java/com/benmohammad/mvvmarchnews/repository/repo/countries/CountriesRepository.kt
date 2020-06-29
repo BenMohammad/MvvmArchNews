@@ -1,6 +1,7 @@
 package com.benmohammad.mvvmarchnews.repository.repo.countries
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import com.benmohammad.mvvmarchnews.app.AppExecutors
 import com.benmohammad.mvvmarchnews.repository.db.countries.CountriesDao
 import com.benmohammad.mvvmarchnews.repository.model.countries.Country
@@ -14,6 +15,12 @@ class CountriesRepository @Inject constructor(
     private val context: Context,
     private val appExecutors: AppExecutors
 ) {
+
+    fun getCountries(): LiveData<List<Country>> {
+        getCountriesDataFromAssets()
+
+        return countriesDao.getCountries()
+    }
 
     private fun getCountriesDataFromAssets() {
         val list: List<String> = context.assets.list("countries")!!.asList<String>()
