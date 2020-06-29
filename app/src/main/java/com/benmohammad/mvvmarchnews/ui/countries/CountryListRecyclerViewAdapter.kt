@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.row_country_list.view.*
 
 class CountryListRecyclerViewAdapter(
     private val mValues: List<Country>,
-    private val mListener: OnCountriesListClickListener
+    private val mListener: OnCountriesListClickListener?
 ): RecyclerView.Adapter<CountryListRecyclerViewAdapter.ViewHolder>() {
 
     private val mOnClickListener: View.OnClickListener

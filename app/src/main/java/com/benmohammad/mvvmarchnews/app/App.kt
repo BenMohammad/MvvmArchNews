@@ -2,6 +2,7 @@ package com.benmohammad.mvvmarchnews.app
 
 import android.app.Activity
 import android.app.Application
+import com.benmohammad.mvvmarchnews.di.base.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -14,9 +15,10 @@ class App: Application(), HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
+        AppInjector.init(this)
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {
-        return activityInjector()
+        return dispatchingAndroidInjector
     }
 }

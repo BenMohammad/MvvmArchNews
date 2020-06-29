@@ -13,6 +13,7 @@ import com.benmohammad.mvvmarchnews.R
 import com.benmohammad.mvvmarchnews.repository.api.network.Status
 import com.benmohammad.mvvmarchnews.utils.extensions.gone
 import com.benmohammad.mvvmarchnews.utils.extensions.visible
+import org.mockito.internal.progress.MockingProgress
 
 class CompleteRecyclerView @JvmOverloads constructor(
     context: Context,
@@ -74,6 +75,11 @@ class CompleteRecyclerView @JvmOverloads constructor(
     fun showEmptyStateView() {
         mProgressView?.gone()
         mEmptyView?.visible()
+    }
+
+    fun showProgressView() {
+        mProgressView?.visible()
+        mEmptyView?.gone()
     }
 
     fun setEmptyMessage(@StringRes mEmptyMessageResId: Int) {
