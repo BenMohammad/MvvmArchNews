@@ -22,7 +22,7 @@ fun View.invisible() {
     visibility = View.INVISIBLE
 }
 
-fun View.hone() {
+fun View.gone() {
     visibility = View.GONE
 }
 
