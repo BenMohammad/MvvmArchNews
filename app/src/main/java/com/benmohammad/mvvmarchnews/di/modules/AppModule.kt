@@ -20,7 +20,7 @@ import javax.inject.Singleton
 class AppModule {
 
     companion object {
-        private const val BASE_URL = "https://newsapi.org/v2/"
+        private const val BASE_URL = "http://newsapi.org/v2/"
     }
 
     @Singleton

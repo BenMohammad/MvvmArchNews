@@ -10,5 +10,5 @@ data class Country(
     @SerializedName("countryName") var countryName: String? = null,
     @SerializedName("displayName") var displayName: String? = null,
     @SerializedName("countryKey") var countryKey: String? = null,
-    @SerializedName("countryFlagUrl") var countryFlagUrl: String? = null
+    @SerializedName("countryFagUrl") var countryFlagUrl: String? = null
 )

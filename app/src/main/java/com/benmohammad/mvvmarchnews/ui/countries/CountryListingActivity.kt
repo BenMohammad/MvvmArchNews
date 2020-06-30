@@ -1,7 +1,6 @@
 package com.benmohammad.mvvmarchnews.ui.countries
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.benmohammad.mvvmarchnews.R
 import com.benmohammad.mvvmarchnews.repository.model.countries.Country

@@ -29,7 +29,7 @@ class NewsRepository @Inject constructor(
 
         return object: NetworkAndDBBoundResource<List<NewsArticles>, NewsSource>(appExecutors) {
             override fun saveCallResult(item: NewsSource) {
-                if(item.articles.isEmpty()) {
+                if(!item.articles.isEmpty()) {
                     newsDao.deleteAllArticles()
                     newsDao.insertArticles(item.articles)
                 }
@@ -42,7 +42,7 @@ class NewsRepository @Inject constructor(
                 newsDao.getNewsArticles()
 
             override fun createCall(): LiveData<Resource<NewsSource>> =
-                apiServices.getNewsSources(data)
+                apiServices.getNewsSource(data)
         }.asLIveData()
     }
 
@@ -53,7 +53,7 @@ class NewsRepository @Inject constructor(
 
         return object: NetworkResource<NewsSource>() {
             override fun createCall(): LiveData<Resource<NewsSource>> {
-                return apiServices.getNewsSources(data)
+                return apiServices.getNewsSource(data)
             }
         }.asLiveData()
     }

@@ -94,6 +94,5 @@ class CountryListFragment: Fragment(), Injectable {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }
             }
-
-
-    }}
+        }
+    }

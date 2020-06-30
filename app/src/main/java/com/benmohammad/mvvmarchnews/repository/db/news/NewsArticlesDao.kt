@@ -17,5 +17,5 @@ interface NewsArticlesDao {
     fun getNewsArticles(): LiveData<List<NewsArticles>>
 
     @Query("DELETE FROM news_table")
-    abstract fun deleteAllArticles()
+    fun deleteAllArticles()
 }
