@@ -48,8 +48,8 @@ abstract class NetworkAndDBBoundResource<ResultType, RequestType> @MainThread co
                             }
                             appExecutors.mainThread().execute{
                                 result.addSource(loadFromDb()) {
-                                    newValue ->
-                                    setValue(Resource.success(newValue))
+                                    newData ->
+                                    setValue(Resource.success(newData))
                                 }
                             }
                         }

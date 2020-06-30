@@ -31,9 +31,16 @@ class CountriesRepository @Inject constructor(
             val country = Country()
             country.countryName = item
             country.displayName = (item.replace("_", " ").replace(".png", ""))
-            country.countryFlagUrl = "file://android_assets/countries/$item"
+            country.countryFlagUrl = "file:///android_asset/countries/$item"
             country.countryKey = CountryNameMapping.getCountryKey(item)
             listOfCountries.add(country)
 
+        }
+
+        appExecutors.diskIO().execute{
+            if(!listOfCountries.isEmpty()) {
+                countriesDao.deleteAllCountries()
+                countriesDao.insertCountries(listOfCountries)
+            }
         }
     }}

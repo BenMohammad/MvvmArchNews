@@ -68,6 +68,4 @@ class CountryListRecyclerViewAdapter(
             return super.toString() + " '" + tv_country_name.text + "'"
         }
     }
-
-
 }
